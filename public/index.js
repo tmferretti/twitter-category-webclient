@@ -7,7 +7,11 @@ var HomePage = {
       message: "Welcome to Vue.js!"
     };
   },
-  created: function() {},
+  created: function() {
+  	axios.get('https://127.0.0.1:3000/v1/categories', { crossdomain: true }).then(function(response) {
+  		console.log(response);
+  	})
+  },
   methods: {},
   computed: {}
 };
