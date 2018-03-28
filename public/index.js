@@ -4,15 +4,23 @@ var HomePage = {
   template: "#home-page",
   data: function() {
     return {
-      message: "Welcome to Vue.js!"
+      categories: [],
+      activeCategory: {}
     };
   },
   created: function() {
   	axios.get('http://localhost:3000/v1/categories', { crossdomain: true }).then(function(response) {
-  		console.log(response);
-  	})
+      this.categories = response.data
+      this.activeCategory = this.categories[0]
+      console.log(this.categories);
+
+    }.bind(this));
   },
-  methods: {},
+  methods: {
+    changeActive: function(tab) {
+      console.log("changed the tab")
+    }
+  },
   computed: {}
 };
 
