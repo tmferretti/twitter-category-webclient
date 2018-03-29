@@ -3981,25 +3981,25 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   margin-bottom: 10px;
   list-style: none;
 }
-.nav > li {
+.nav > div > li {
   position: relative;
   display: block;
 }
-.nav > li > a {
+.nav > div > li > a {
   position: relative;
   display: block;
   padding: 10px 15px;
 }
-.nav > li > a:hover,
-.nav > li > a:focus {
+.nav > div > li > a:hover,
+.nav > div > li > a:focus {
   text-decoration: none;
   background-color: #eee;
 }
-.nav > li.disabled > a {
+.nav > div > li.disabled > a {
   color: #777;
 }
-.nav > li.disabled > a:hover,
-.nav > li.disabled > a:focus {
+.nav > div > li.disabled > a:hover,
+.nav > div > li.disabled > a:focus {
   color: #777;
   text-decoration: none;
   cursor: not-allowed;
@@ -4017,28 +4017,28 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   overflow: hidden;
   background-color: #e5e5e5;
 }
-.nav > li > a > img {
+.nav > div > li > a > img {
   max-width: none;
 }
 .nav-tabs {
   border-bottom: 1px solid #ddd;
 }
-.nav-tabs > li {
+.nav-tabs > div > li {
   float: right;
   margin-bottom: -1px;
 }
-.nav-tabs > li > a {
+.nav-tabs > div > li > a {
   margin-right: 2px;
   line-height: 1.42857143;
   border: 1px solid transparent;
   border-radius: 4px 4px 0 0;
 }
-.nav-tabs > li > a:hover {
+.nav-tabs > div > li > a:hover {
   border-color: #eee #eee #ddd;
 }
-.nav-tabs > li.active > a,
-.nav-tabs > li.active > a:hover,
-.nav-tabs > li.active > a:focus {
+.nav-tabs > div > li.active > a,
+.nav-tabs > div > li.active > a:hover,
+.nav-tabs > div > li.active > a:focus {
   color: #555;
   cursor: default;
   background-color: #fff;

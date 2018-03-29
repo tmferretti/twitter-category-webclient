@@ -30,9 +30,9 @@
   <div class="vue-component">
     <div class="well">
       <ul class="nav nav-tabs">
-        <li v-bind:class="{ active: categories[0].isActive }"><a href="#" v-on:click="changeActive(categories[0], categories, tweets)">{{ categories[0].name }}</a></li>
-        <li v-bind:class="{ active: categories[1].isActive }"><a href="#" v-on:click="changeActive(categories[1], categories, tweets)">{{ categories[1].name }}</a></li>
-        <li v-bind:class="{ active: categories[2].isActive }"><a href="#" v-on:click="changeActive(categories[2], categories, tweets)">{{ categories[2].name }}</a></li>
+        <div v-for="category in categories">
+          <li v-bind:class="{ active: category.isActive }"><a href="#" v-on:click="changeActive(category, categories, tweets)">{{ category.name }}</a></li>
+        </div>
       </ul>
       
       <div class="tweet-container">

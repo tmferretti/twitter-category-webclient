@@ -32,20 +32,20 @@ var HomePage = {
     }.bind(this));
   },
   methods: {
-    changeActive: function(category, categories, tweets) {
-      for (var i = 0; categories[i]; i++) {
-        categories[i].isActive = false;
-      };
+    // changeActive: function(category, categories, tweets) {
+    //   for (var i = 0; categories[i]; i++) {
+    //     categories[i].isActive = false;
+    //   };
       
-      this.activeCategory = category;
-      category.isActive = !category.isActive;
+    //   this.activeCategory = category;
+    //   category.isActive = !category.isActive;
 
-      for (var i = 0; tweets[i]; i++) {
-        // console.log(tweets[i].isActive);
-        tweets[i].isActive = !tweets[i].isActive;
-      };
-      // tweets.isActive = !this.tweets.isActive;
-    }.bind(this)
+    //   for (var i = 0; tweets[i]; i++) {
+    //     // console.log(tweets[i].isActive);
+    //     tweets[i].isActive = !tweets[i].isActive;
+    //   };
+    //   // tweets.isActive = !this.tweets.isActive;
+    // }.bind(this)
   },
   computed: {}
 };
