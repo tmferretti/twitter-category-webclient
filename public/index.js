@@ -11,7 +11,7 @@ var HomePage = {
     };
   },
   created: function() {
-  	axios.get('http://localhost:3000/v1/categories', { crossdomain: true }).then(function(response) {
+  	axios.get('https://hidden-everglades-54760.herokuapp.com/v1/categories', { crossdomain: true }).then(function(response) {
       this.categories = response.data
       this.activeCategory = this.categories[0]
       // console.log(this.categories);
