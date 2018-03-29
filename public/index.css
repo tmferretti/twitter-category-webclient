@@ -5,7 +5,7 @@
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
-  font-family: sans-serif;
+  font-family: helvetica-neue;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
@@ -1087,6 +1087,11 @@ body {
   line-height: 1.42857143;
   color: #333;
   background-color: #fff;
+  background-image: url("/background.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 input,
 button,
@@ -5824,8 +5829,11 @@ button.list-group-item-danger.active:focus {
 .well {
   min-height: 20px;
   padding: 19px;
+  margin-top: 20px;
   margin-bottom: 20px;
-  background-color: rgba(255,255,255,0.4);
+  margin-right: 25%;
+  margin-left: 25%;
+  background-color: rgba(255,255,255,10);
   border: 1px solid #e3e3e3;
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
@@ -6773,7 +6781,49 @@ button.close {
 .tweet-container {
   display: flex;
   flex-direction: column;
+}
+.tweet-box {
+  display: flex;
+  flex-direction: row;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 20px;
+  background-color: rgba(255,255,255, 0.9);
+}
+
+.profile-img {
+  height: 48px;
+  max-width: 48px;
+  margin-right: 20px;
+  border-radius: 50%;
 
 }
 
+.heart-icon {
+  content: url("/heart.svg");
+  max-width: 18px;
+  max-height: 18px;
+  margin-bottom: -4px;
+}
+
+.retweet-icon {
+  content: url("/retweet.svg");
+  max-width: 18px;
+  max-height: 18px;
+  margin-bottom: -2px;
+  padding-right: 2px;
+}
+
+.metadata {
+  width: 230px;
+}
+
+.meta-element {
+  padding-right: 10px;
+
+}
+
+.meta-text {
+  vertical-align: middle;
+}
 /*# sourceMappingURL=bootstrap.css.map */

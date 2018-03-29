@@ -8,6 +8,7 @@
     <script src="/axios.min.js"></script>
     <script src="index.js" defer></script>
     <link rel="stylesheet" type="text/css" href="/index.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
@@ -22,7 +23,6 @@
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
   </body>
 </html>
 
@@ -30,24 +30,29 @@
   <div class="vue-component">
     <div class="well">
       <ul class="nav nav-tabs">
-        <li v-bind:class="{ active: categories[0].isActive }"><a href="#" v-on:click="changeActive(this)">{{ categories[0].name }}</a></li>
-        <li v-bind:class="{ active: categories[1].isActive }"><a href="#" v-on:click="changeActive(this)">{{ categories[1].name }}</a></li>
-        <li v-bind:class="{ active: categories[2].isActive }"><a href="#" v-on:click="changeActive(this)">{{ categories[2].name }}</a></li>
+        <li v-bind:class="{ active: categories[0].isActive }"><a href="#" v-on:click="changeActive(categories[0], categories, tweets)">{{ categories[0].name }}</a></li>
+        <li v-bind:class="{ active: categories[1].isActive }"><a href="#" v-on:click="changeActive(categories[1], categories, tweets)">{{ categories[1].name }}</a></li>
+        <li v-bind:class="{ active: categories[2].isActive }"><a href="#" v-on:click="changeActive(categories[2], categories, tweets)">{{ categories[2].name }}</a></li>
       </ul>
       
       <div class="tweet-container">
-        <div class="" v-for="tweet in activeCategory.tweets">
-          <div class="">
-            <p class="name">{{ tweet.name }}<img class="verified-img" src="/twitter-checkmark.png"></p>
-            <a href="#">@{{ tweet.user }}</a>
-            <p class="tweet-message">{{ tweet.text }}</p>
+        <div v-for="tweet in tweets">
+          <div v-bind:class="{ hidden: !tweet.isActive }">
+            <div class="tweet-box">
+              <!-- <img src="{{ tweet.profile_image_url }}"> -->
+              <img v-bind:src="tweet.profile_image_url" class="profile-img">
+              <div>
+                <p class="name">{{ tweet.name }}<img class="verified-img" src="/twitter-checkmark.png"></p>
+                <a href="#">@{{ tweet.user }}</a>
+                <p class="tweet-message">{{ tweet.text }}</p>
 
-            <div class="pull-right bottom">
-                <span><i class=""></i>{{tweet.date_posted}}</span>
-                <span><a href="#"><i class=""></i>{{ tweet.retweet_count }} retweets</a></span>
-                <span><a href="#"><i class=""></i>{{ tweet.favorite_count }} favorited</a></span>
+                <div class="bottom metadata">
+                    <span class="meta-element">{{tweet.date_posted}}</span>
+                    <span class="meta-element"><i class="retweet-icon"></i><span class="meta-text">{{ tweet.retweet_count }}</span></span>
+                    <span class="meta-element"><i class="heart-icon"></i> <span class="meta-text">{{ tweet.favorite_count }}</span></span>
+                </div>
+              </div>
             </div>
-
           </div>
         </div>
       </div>
