@@ -42,11 +42,11 @@ var HomePage = {
       if (category.isActive != true) {
         console.log("category.isActive is not true")
 
-        // for (var i = 0; categories[i]; i++) {
-        //   categories[i].isActive = false;
-        // };
+        for (var i = 0; categories[i]; i++) {
+          categories[i].isActive = false;
+        };
 
-        // category.isActive = !category.isActive;
+        category.isActive = !category.isActive;
 
         // for (var i = 0; category.tweets[i]; i++) {
           // category.tweets[i].isActive = !category.tweets[i].isActive;

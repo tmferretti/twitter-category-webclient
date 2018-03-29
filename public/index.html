@@ -39,7 +39,6 @@
         <div v-for="tweet in tweets">
           <div v-bind:class="{ hidden: !tweet.isActive }">
             <div class="tweet-box">
-              <!-- <img src="{{ tweet.profile_image_url }}"> -->
               <img v-bind:src="tweet.profile_image_url" class="profile-img">
               <div>
                 <p class="name">{{ tweet.name }}<img class="verified-img" src="/twitter-checkmark.png"></p>
